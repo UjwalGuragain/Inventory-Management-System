@@ -22,4 +22,29 @@ def main():
         print("3. Restock Products")
         print("4. Exit")
 
-      
+  choice = input("Enter your choice: ")
+
+        try:
+            if choice == '1':
+                # Display all products
+                display_products(products)
+            elif choice == '2':
+                # Handle selling products
+                sell_product(products)
+            elif choice == '3':
+                # Handle restocking products
+                restock_product(products)
+            elif choice == '4':
+                # Exit the application
+                print("Thank you for using WeCare Store Manager!")
+                break
+            else:
+                print("Invalid choice. Please try again!")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+        else:
+            # Save changes after successful operations
+            save_products(products)
+
+if __name__ == '__main__':
+    main()      
